@@ -1,0 +1,44 @@
+#include<stdio.h>
+int fun(int*a,int n,int no)
+{int right=0,left=0,sum=0,i=0;
+sum+=a[i];
+while(1){
+if(sum<no){
+left++;
+sum+=a[++i];
+if(i<n)
+continue;
+else
+{
+    break;
+
+}
+}
+else if(sum>no){
+sum=sum-a[right];
+right++;
+}
+else
+{
+    printf("%d %d\n",right,left);
+    return 0;
+}
+}
+return 1;
+}
+int main()
+{
+int i,n,t,no;
+scanf("%d",&t);
+while(t--)
+{
+scanf("%d %d",&n,&no);
+int a[n];
+for(i=0;i<n;i++)
+scanf("%d",&a[i]);
+int c=fun(a,n,no);
+if(c==1)
+printf("-1\n");
+}
+    return 0;
+}
